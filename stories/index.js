@@ -141,5 +141,5 @@ storiesOf("Appointment", module)
     backgrounds: [{ name: "white", value: "#fff", default: true }]
   })
   .add("Appointment", () => <Appointment />)
-  .add("Appointment with time", () => <Appointment time = "12PM" />);
-
+  .add("Appointment with time", () => <Appointment time = "12PM" />)
+  .add("Header", ()=> <Header time = "12PM" />);
