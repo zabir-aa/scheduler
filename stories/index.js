@@ -16,6 +16,7 @@ import Empty from "components/Appointment/Empty.js"
 import Show from "components/Appointment/Show.js"
 import Confirm from "components/Appointment/Confirm"
 import Status from "components/Appointment/Status"
+import Error from "components/Appointment/Error"
 
 
 storiesOf("Button", module)
@@ -152,3 +153,4 @@ storiesOf("Appointment", module)
   .add("Show", ()=> <Show onEdit ={action("onEdit")} onDelete ={action("onDelete")} />)
   .add("Confirm", () => <Confirm message = "Delete the appointment?" onCancel={action("onCancel")} onConfirm={action("onConfirm")} />)
   .add("Status", ()=> <Status message = "Deleting" />)
+  .add("Error", ()=> <Error message="Could not delete appointment!" onClose = {action("onClose")} />)
