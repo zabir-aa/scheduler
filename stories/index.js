@@ -15,6 +15,7 @@ import Header from "components/Appointment/Header.js";
 import Empty from "components/Appointment/Empty.js"
 import Show from "components/Appointment/Show.js"
 import Confirm from "components/Appointment/Confirm"
+import Status from "components/Appointment/Status"
 
 
 storiesOf("Button", module)
@@ -149,4 +150,5 @@ storiesOf("Appointment", module)
   .add("Header", ()=> <Header time = "12PM" />)
   .add("Empty", ()=> <Empty onAdd ={action("onAdd")} />)
   .add("Show", ()=> <Show onEdit ={action("onEdit")} onDelete ={action("onDelete")} />)
-  .add("Confirm", () => <Confirm message="Delete the appointment?" onCancel={action("onCancel")} onConfirm={action("onConfirm")} />)
+  .add("Confirm", () => <Confirm message = "Delete the appointment?" onCancel={action("onCancel")} onConfirm={action("onConfirm")} />)
+  .add("Status", ()=> <Status message = "Deleting" />)
