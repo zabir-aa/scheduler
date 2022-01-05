@@ -9,7 +9,7 @@ export default function DayListItem(props) {
     "day-list__item--full":props.spots === 0,
   }
 );
-  const formatSpots = (props.spots === 0 ? "no" : props.spots) + " spot" + (props.spots != 1 ? "s":"") + " remaining"
+  const formatSpots = (props.spots === 0 ? "no" : props.spots) + " spot" + (props.spots !== 1 ? "s":"") + " remaining"
 
   console.log("PROPS:  ", props)
   console.log("DAYCLASS:  ", dayClass);
