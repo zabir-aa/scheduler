@@ -13,7 +13,7 @@ export default function Appointment(props) {
         time = {props.time}
       />
       {props.interview ? 
-      <Show student={props.interview.student} interviewer={props.interview.interviewer} /> : <Empty />}
+      <Show {...props.interview} /> : <Empty />}
       {/* {props.time? "" : "No"} Appointment{props.time? " at":"s"} {props.time} */}
     </article>
   )
