@@ -28,9 +28,6 @@
 //   }
 // };
 
-import { NULL } from "node-sass";
-
-
 
  const getAppointmentsForDay = function(state, day) {
   let AppointmentsForDay=[];
@@ -63,4 +60,4 @@ const getInterview = function(state, interview) {
 }
 
 
- export {getAppointmentsForDay, getInterview}
+ module.exports = {getAppointmentsForDay, getInterview}
