@@ -28,8 +28,11 @@
 //   }
 // };
 
+import { NULL } from "node-sass";
 
- export function getAppointmentsForDay(state, day) {
+
+
+ const getAppointmentsForDay = function(state, day) {
   let AppointmentsForDay=[];
   const matchedDay = state.days.filter(d=> d.name === day);
   if (state.days.length === 0 || matchedDay.length === 0){
@@ -40,3 +43,24 @@
   });
   return AppointmentsForDay;
 };
+
+
+
+const getInterview = function(state, interview) {
+  if (interview === null){
+    return null;
+  }
+  return(
+    {
+      "student": interview.student,
+      "interviewer": {
+        "id": interview.interviewer,
+        "name": state.interviewers[interview.interviewer].name,
+        "avatar": state.interviewers[interview.interviewer].avatar
+      }
+    }
+  )
+}
+
+
+ export {getAppointmentsForDay, getInterview}
