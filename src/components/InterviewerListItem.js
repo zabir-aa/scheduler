@@ -8,7 +8,6 @@ export default function InterviewerListItem(props) {
     "interviewers__item--selected":props.selected
     // ,"interviewer-list__item--full":props.spots === 0
   });
-  console.log("INC: ", interviewerClass)
 
   return (
     <li key={props.id} className={interviewerClass} onClick= {props.setInterviewer}>

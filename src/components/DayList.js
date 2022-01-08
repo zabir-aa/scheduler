@@ -16,6 +16,5 @@ export default function DayList(props) {
       )
     }
   )
-  console.log("DAYS: ", DAYS)
   return DAYS
 }
