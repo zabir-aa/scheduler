@@ -25,7 +25,7 @@ export default function Appointment(props) {
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === CREATE && (
         <Form 
-        interviewers={[1,2,3]}
+        interviewers={props.interviewers}
         onSave={()=> {}} 
         onCancel={back}
         />
