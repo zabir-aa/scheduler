@@ -42,12 +42,12 @@ export default function Application(props) {
     };
 
     return axios.put(`http://localhost:8001/api/appointments/${id}`, {interview})
-    .then(
+    .then(()=> {
       setState({
-      ...state,
-      appointments
-      })
-    )
+        ...state,
+        appointments
+      })  
+    })
   }
 
   function cancelInterview (id) {
@@ -62,12 +62,12 @@ export default function Application(props) {
     };
 
     return axios.delete(`http://localhost:8001/api/appointments/${id}`, {interview: null})
-    .then(
+    .then(()=> {
       setState({
-      ...state,
-      appointments
-      })
-    )
+        ...state,
+        appointments
+        })
+    })
   }
 
   const dailyAppointments = getAppointmentsForDay(state, state.day);

@@ -112,7 +112,6 @@ const state = {
 const getInterviewersForDay = function(state, day) {
   let InterviewersForDay=[];
   const selectedDayArray = state.days.filter(d=> d.name === day);
-  console.log(selectedDayArray);
   if (state.days.length === 0 || selectedDayArray.length === 0){
     return [];
   } else {

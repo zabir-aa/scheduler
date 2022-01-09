@@ -12,7 +12,7 @@ const InterviewerList = function (props) {
         {props.interviewers.map (
           x => {
             return(
-              <li key= {x.id} className="interviewers__list__item">
+              <ul key= {x.id} className="interviewers__list__item">
                 <InterviewerListItem
                   key={x.id}
                   name= {x.name}
@@ -20,7 +20,7 @@ const InterviewerList = function (props) {
                   selected={x.id === props.value}
                   setInterviewer={()=> props.onChange(x.id)}
                 />
-              </li>
+              </ul>
             )
           }
         )}
