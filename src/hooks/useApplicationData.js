@@ -31,14 +31,32 @@ const useApplicationData = function(){
         DAYS.push({...DAY})
       }
     }
-
-  
     return axios.put(`http://localhost:8001/api/appointments/${id}`, {interview})
     .then(()=> {
       setState({
         ...state,
         appointments, 
         days: DAYS  
+      })
+    })
+  }
+
+  function editInterview(id, interview) {
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+  
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+
+    return axios.put(`http://localhost:8001/api/appointments/${id}`, {interview})
+    .then(()=> {
+      setState({
+        ...state,
+        appointments,
       })
     })
   }
@@ -82,7 +100,7 @@ const useApplicationData = function(){
       setState(prev => ({...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data}));
     })
   },[])
-  return {state, setDay, bookInterview, cancelInterview}
+  return {state, setDay, bookInterview, editInterview, cancelInterview}
 }
 
 export default useApplicationData;
