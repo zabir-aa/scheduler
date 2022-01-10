@@ -4,12 +4,12 @@ import classNames from "classnames";
 
 export default function DayListItem(props) {
 
-  const dayClass = classNames ( "day-list__item" ,{
+  const dayClass = classNames ( "day-list__item" , {
     "day-list__item--selected":props.selected,
     "day-list__item--full":props.spots === 0,
-  }
-);
-  const formatSpots = (props.spots === 0 ? "no" : props.spots) + " spot" + (props.spots !== 1 ? "s":"") + " remaining"
+  });
+
+  const formatSpots = (props.spots === 0 ? "no" : props.spots) + " spot" + (props.spots !== 1 ? "s":"") + " remaining" ;
 
   return (
     <li className={dayClass} onClick={() => props.setDay(props.name)}>
