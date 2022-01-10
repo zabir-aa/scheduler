@@ -13,7 +13,6 @@ const useApplicationData = function(){
   const setDay = (day) => {setState(prev => ({ ...prev, day }))};
   
   function bookInterview(id, interview) {
-    console.log("Bookinterview ID and INTERVIEW: ",id, interview);
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -23,13 +22,24 @@ const useApplicationData = function(){
       ...state.appointments,
       [id]: appointment
     };
+
+    const DAYS = []
+    for (const DAY of state.days) {
+      if(DAY.appointments.includes(id)) {
+        DAYS.push({...DAY, spots: DAY.spots-1}) 
+      } else {
+        DAYS.push({...DAY})
+      }
+    }
+
   
     return axios.put(`http://localhost:8001/api/appointments/${id}`, {interview})
     .then(()=> {
       setState({
         ...state,
-        appointments
-      })  
+        appointments, 
+        days: DAYS  
+      })
     })
   }
   
@@ -43,12 +53,22 @@ const useApplicationData = function(){
       ...state.appointments,
       [id]: appointment
     };
+
+    const DAYS = []
+    for (const DAY of state.days) {
+      if(DAY.appointments.includes(id)) {
+        DAYS.push({...DAY, spots: DAY.spots+1})
+      } else {
+        DAYS.push({...DAY})
+      }
+    }
   
     return axios.delete(`http://localhost:8001/api/appointments/${id}`, {interview: null})
     .then(()=> {
       setState({
         ...state,
-        appointments
+        appointments, 
+        days: DAYS
         })
     })
   }
