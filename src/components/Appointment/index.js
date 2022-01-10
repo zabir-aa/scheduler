@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import "./styles.scss";
 import Header from "./Header";
-import Show from "./Show";
 import Empty from "./Empty";
 import Form from './Form';
-import useVisualMode from 'hooks/useVisualMode';
+import Show from "./Show";
 import Status from './Status';
 import Confirm from './Confirm';
 import Error from './Error';
+import useVisualMode from 'hooks/useVisualMode';
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
@@ -18,7 +18,6 @@ const CONFIRM = "CONFIRM";
 const DELETING = "DELETING";
 const ERROR_EDIT = "ERROR_EDIT";
 const ERROR_SAVE = "ERROR_SAVE";
-
 const ERROR_DELETE = "ERROR_DELETE";
 
 export default function Appointment(props) {
