@@ -1,5 +1,4 @@
 import React from "react";
-import DayListItem from "components/DayListItem.js";
 import InterviewerListItem from "./InterviewerListItem";
 import "./InterviewerList.scss";
 

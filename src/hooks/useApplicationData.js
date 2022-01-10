@@ -24,6 +24,7 @@ const useApplicationData = function(){
     };
 
     const DAYS = []
+
     for (const DAY of state.days) {
       if(DAY.appointments.includes(id)) {
         DAYS.push({...DAY, spots: DAY.spots-1}) 
@@ -31,6 +32,7 @@ const useApplicationData = function(){
         DAYS.push({...DAY})
       }
     }
+
     return axios.put(`http://localhost:8001/api/appointments/${id}`, {interview})
     .then(()=> {
       setState({
@@ -100,6 +102,7 @@ const useApplicationData = function(){
       setState(prev => ({...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data}));
     })
   },[])
+
   return {state, setDay, bookInterview, editInterview, cancelInterview}
 }
 
