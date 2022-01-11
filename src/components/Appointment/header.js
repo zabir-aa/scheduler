@@ -1,5 +1,7 @@
 import React from "react";
 
+// The default Header, present in every view. (props: time)
+
 export default function Header(props) {
   return(
     <header className="appointment__time">

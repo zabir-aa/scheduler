@@ -1,5 +1,8 @@
 import React from "react";
 
+// The Error view to transition to in case server returns an error during saving, editing or deleting an appointment
+// props: message
+
 export default function Error(props) {
   return(
     <main className="appointment__card appointment__card--error">

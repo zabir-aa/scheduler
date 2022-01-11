@@ -1,5 +1,8 @@
 import React from "react";
 
+// The default view of a booked appointment
+// props: student, interviewer, onDelete, onEdit
+
 export default function Show(props) {
 
   return(

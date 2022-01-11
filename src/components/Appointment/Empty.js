@@ -1,5 +1,7 @@
 import React from "react";
 
+// The default Empty slot view (props: onAdd)
+
 export default function Empty(props) {
   return(
     <main className="appointment__add">

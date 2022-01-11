@@ -20,13 +20,16 @@ const ERROR_EDIT = "ERROR_EDIT";
 const ERROR_SAVE = "ERROR_SAVE";
 const ERROR_DELETE = "ERROR_DELETE";
 
+
+// The main appointment component, contains all visual modes
+
 export default function Appointment(props) {
 
   const {mode, transition, back} = useVisualMode(props.interview ? SHOW : EMPTY);
   const [userInput, setUserInput] = useState({})
   
 
-  function save(name, interviewer) {
+  function save(name, interviewer) { // Function initiates saving process of a new appointment
     const interview = {student: name, interviewer};
     setUserInput(interview)
     transition(SAVING)
@@ -36,7 +39,7 @@ export default function Appointment(props) {
   }
 
 
-  function edit(name, interviewer) {
+  function edit(name, interviewer) { // Function initiates the update process of an existing appointment
     const interview = {student: name, interviewer};
     setUserInput(interview)
     transition(SAVING)
@@ -46,7 +49,7 @@ export default function Appointment(props) {
   }
 
   
-  function deleteInterview() {
+  function deleteInterview() { // Function initiates the delete process of an existing appointment after passing the CONFIRM mode
     transition(DELETING, true)
     props.cancelInterview(props.id)
     .then(()=> transition(EMPTY))
@@ -61,6 +64,9 @@ export default function Appointment(props) {
       <Header
         time = {props.time}
       />
+
+      {/* The components below are all conditional: shown only when the mode is true */ }
+
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === CREATE &&
         <Form 

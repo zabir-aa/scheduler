@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import Button from "../Button";
 import InterviewerList from "../InterviewerList";
 
+
+// The Form view to create / edit an appointment
+// props: interviewers, onSave, onCancel, student, interviewer, userInput
+
 export default function Form(props) {
 
   const [student, setStudent] = useState(props.userInput.student || props.student|| "");
