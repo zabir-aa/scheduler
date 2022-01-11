@@ -2,6 +2,8 @@ import React from "react";
 import InterviewerListItem from "./InterviewerListItem";
 import "./InterviewerList.scss";
 
+// Component carries the list of interviewers for Form component of Appointment
+// props: interviewers, value, onChange
 
 const InterviewerList = function (props) {
   return (

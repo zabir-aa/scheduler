@@ -3,6 +3,9 @@ import classNames from "classnames";
 
 import "components/Button.scss";
 
+// The storybook component Button
+// props: onClick, disabled
+
 export default function Button(props) {
   let buttonClass = classNames("button",
     { "button--confirm": props.confirm,
