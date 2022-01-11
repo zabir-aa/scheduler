@@ -2,7 +2,7 @@
 
 The interview scheduler allows a student to book and manage an interview with a mentor. Appointments can be made between 12 PM and 5 PM on 5 workdays of the week. When the application loads, it makes a request to the API server and shows the appointntment and spot information for the selected day. Choosing other days will show corresponding appointments and spots as well. 
 
-![Alt text](public/images/Screenshots/Screen Shot 2022-01-11 at 12.24.13 AM.png?raw=true "Interview Scheduler - Default View")
+![Alt text](/public/images/Screenshots/Screen Shot 2022-01-11 at 12.24.13 AM.png?raw=true "Interview Scheduler - Default View")
 
 To create an appointment, a student can type their name and select an interviewer from the list of available interviewer for that day, and click on the save action. The save action will make a request to the server to make the change persistent. During the save operation, the appointment spot will show a status indicator.
 
