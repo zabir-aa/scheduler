@@ -1,26 +1,28 @@
 import React from "react";
-import "components/Application.scss";
-import "components/Appointment"
-import DayList from "./DayList";
-import Appointment from "components/Appointment/index";
+import "components/Application.scss"; // Style
+import DayList from "./DayList"; // Component carries the list of Days
+import Appointment from "components/Appointment/index"; // Imports the Appointment component
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 import useApplicationData from "hooks/useApplicationData";
 
 export default function Application(props) {
 
   const {
-    state,
-    setDay,
-    bookInterview,
-    editInterview,
-    cancelInterview
+    state, // The state object of the application, contains states for "day", "days", "appointments" & "interviews"
+    setDay, // Updates state whaen a new day is selected
+    bookInterview, //function executes saving of a new appointment
+    editInterview, // function executes update on an existing appointment
+    cancelInterview // function executes removal on an existing appointment
   } = useApplicationData(); // Custom hook: contains data management functions
   
 
-  const dailyAppointments = getAppointmentsForDay(state, state.day); // 
-  const interviewers = getInterviewersForDay(state, state.day);
-  const schedule = dailyAppointments.map((appointment) => {
-    const interview = getInterview(state, appointment.interview);
+  const dailyAppointments = getAppointmentsForDay(state, state.day); // Returns the array of appointment objects from state for the selected day
+  const interviewers = getInterviewersForDay(state, state.day); // Returns the array of interviewer objects from state, available on the selected day
+  
+  const schedule = dailyAppointments.map((appointment) => {     // Maps all appointment objects in an array
+    
+    const interview = getInterview(state, appointment.interview); // With an input of the brief interview object from an appointment, returns a detailed interview object from state
+    
     return (
       <Appointment
         key={appointment.id}
