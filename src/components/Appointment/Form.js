@@ -7,10 +7,10 @@ export default function Form(props) {
   const [student, setStudent] = useState(props.userInput.student || props.student|| "");
   const [interviewer, setInterviewer] = useState(props.userInput.interviewer || props.interviewer || null);
 
-  const reset = () => {
-    setStudent("");
-    setInterviewer(null);
-  }
+  // const reset = () => {
+  //   setStudent("");
+  //   setInterviewer(null);
+  // }
 
   return(
     <main className="appointment__card appointment__card--create">

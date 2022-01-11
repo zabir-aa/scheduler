@@ -14,10 +14,10 @@ export default function Application(props) {
     bookInterview,
     editInterview,
     cancelInterview
-  } = useApplicationData();
+  } = useApplicationData(); // Custom hook: contains data management functions
   
 
-  const dailyAppointments = getAppointmentsForDay(state, state.day);
+  const dailyAppointments = getAppointmentsForDay(state, state.day); // 
   const interviewers = getInterviewersForDay(state, state.day);
   const schedule = dailyAppointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
