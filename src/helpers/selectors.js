@@ -1,4 +1,7 @@
- const getAppointmentsForDay = function(state, day) {
+// SELECTOR FUNCTION 1
+// Returns the array of appointment objects from state for the selected day
+ 
+const getAppointmentsForDay = function(state, day) {
   let AppointmentsForDay=[];
   const selectedDayArray = state.days.filter(d=> d.name === day);
   if (state.days.length === 0 || selectedDayArray.length === 0){
@@ -11,6 +14,8 @@
 };
 
 
+// SELECTOR FUNCTION 2
+// With an input of the brief interview object from an appointment, returns a detailed interview object from state
 
 const getInterview = function(state, interview) {
   if (interview === null){
@@ -29,6 +34,9 @@ const getInterview = function(state, interview) {
 }
 
 
+// SELECTOR FUNCTION 3
+// Returns the array of interviewer objects from state, available on the selected day
+
 const getInterviewersForDay = function(state, day) {
   let InterviewersForDay=[];
   const selectedDayArray = state.days.filter(d=> d.name === day);
@@ -43,4 +51,4 @@ const getInterviewersForDay = function(state, day) {
 };
 
 
- module.exports = {getAppointmentsForDay, getInterview, getInterviewersForDay}
+module.exports = {getAppointmentsForDay, getInterview, getInterviewersForDay}

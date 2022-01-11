@@ -1,6 +1,6 @@
 import {getAppointmentsForDay, getInterview, getInterviewersForDay} from "helpers/selectors";
 
-const state = {
+const state = { // Mock state data for test
   days: [
     {
       id: 1,
