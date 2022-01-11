@@ -1,6 +1,7 @@
 {
   "name": "scheduler",
-  "version": "0.1.0",
+  "author": "Abdullah Ahmad Zabir"
+  "version": "0.1.1",
   "private": true,
   "proxy": "http://localhost:8001",
   "dependencies": {
